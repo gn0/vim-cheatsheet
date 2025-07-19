@@ -15,12 +15,19 @@ function! s:toggle_popup()
     elseif s:popup_winid isnot v:null
         call popup_close(s:popup_winid)
         let s:popup_winid = v:null
-    elseif !exists("b:cheatsheet")
-        echomsg "Set `b:cheatsheet` to enable vim-cheatsheet."
+    elseif !exists("b:cheatsheet_lines")
+        echomsg "Set `b:cheatsheet_lines` to enable vim-cheatsheet."
     else
+        if exists("b:cheatsheet_title")
+            let l:title = b:cheatsheet_title
+        else
+            let l:title = ""
+        endif
+
         let s:popup_winid = popup_create(
-                    \   b:cheatsheet,
+                    \   b:cheatsheet_lines,
                     \   #{
+                    \     title: l:title,
                     \     padding: [1, 1, 1, 1],
                     \     border: [1, 1, 1, 1]
                     \   }
