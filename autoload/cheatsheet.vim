@@ -38,7 +38,7 @@ endfunction
 function! cheatsheet#popup_create(title, lines)
     if has("nvim")
         let l:n_rows = len(a:lines)
-        let l:n_cols = cheatsheet#max_len(a:lines + [a:title])
+        let l:n_cols = max(map(a:lines + [a:title], "len(v:val)"))
         let l:buf = nvim_create_buf(v:false, v:true)
 
         call nvim_buf_set_lines(l:buf, 0, -1, v:true, a:lines)
@@ -71,19 +71,4 @@ function! cheatsheet#popup_create(title, lines)
                     \   }
                     \ )
     endif
-endfunction
-
-" Calculates the length of the longest string in the provided list.
-function! cheatsheet#max_len(strings)
-    let l:max = v:null
-
-    for l:string in a:strings
-        let l:this = len(l:string)
-
-        if l:max is v:null || l:max < l:this
-            let l:max = l:this
-        endif
-    endfor
-
-    return l:max
 endfunction
