@@ -1,4 +1,6 @@
 " Location: autoload/cheatsheet.vim
+" Author: Gábor Nyéki
+" License: CC0
 
 if exists("g:autoloaded_cheatsheet") || &cp
     finish

@@ -2,6 +2,7 @@
 " Location: plugin/cheatsheet.vim
 " Author: Gábor Nyéki
 " Version: 1.1
+" License: CC0
 
 if exists("g:loaded_cheatsheet") || &cp
     finish
