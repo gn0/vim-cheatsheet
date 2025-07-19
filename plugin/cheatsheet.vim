@@ -1,6 +1,6 @@
 " cheatsheet.vim - Show buffer-specific reminders in a popup window.
 " Author: Gábor Nyéki
-" Version: 1.0
+" Version: 1.1
 
 if exists("g:loaded_cheatsheet") || &cp
     finish
