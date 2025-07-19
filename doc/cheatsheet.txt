@@ -1,0 +1,38 @@
+*cheatsheet.txt*  Plugin for toggling a buffer-specific cheatsheet
+
+Author:  Gábor Nyéki
+License: CC0
+
+INTRODUCTION                                    *cheatsheet*
+
+This plugin allows you to specify buffer-specific content that can be shown in
+a popup window when toggled.
+
+The motivating use case is Makefiles where "$^" and "$<" look similar but have
+an important difference between them.  "$^" contains every prerequisite of a
+recipe while "$<" contains only the first prerequisite.  It is very easy to
+forget which is which, so we can put this information in a popup window that we
+can activate when we need it:
+>
+  augroup cheatsheet
+    autocmd!
+    autocmd FileType make
+                \ let b:cheatsheet_title = "Makefile reminders" |
+                \ let b:cheatsheet_lines = [
+                \   "$<  first requirement",
+                \   "$^  all requirements",
+                \ ]
+  augroup END
+<
+MAPPINGS                                        *cheatsheet-mappings*
+
+By default, the cheatsheet toggle is mapped to <Leader>C.  You can change this
+mapping by setting 'g:cheatsheet_no_mappings' in your '.vimrc' and mapping
+<Plug>ToggleCheatsheet to a different key combination:
+>
+  let g:cheatsheet_no_mappings = v:true
+
+  " Bind the toggle to `g?` instead:
+  nmap <silent> g? <Plug>ToggleCheatsheet
+<
+vim:tw=78:ts=8:ft=help:norl:
