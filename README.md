@@ -9,8 +9,8 @@ With vim-cheatsheet, I can toggle a reminder when I am editing a Makefile:
 autocmd FileType make
             \ let b:cheatsheet_title = "Makefile reminders" |
             \ let b:cheatsheet_lines = [
-            \   "$<  first requirement",
-            \   "$^  all requirements",
+            \   "$<  first prerequisite",
+            \   "$^  all prerequisites",
             \ ]
 ```
 

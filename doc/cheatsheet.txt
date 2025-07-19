@@ -19,8 +19,8 @@ can activate when we need it:
     autocmd FileType make
                 \ let b:cheatsheet_title = "Makefile reminders" |
                 \ let b:cheatsheet_lines = [
-                \   "$<  first requirement",
-                \   "$^  all requirements",
+                \   "$<  first prerequisite",
+                \   "$^  all prerequisites",
                 \ ]
   augroup END
 <
