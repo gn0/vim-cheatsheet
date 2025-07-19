@@ -1,8 +1,6 @@
 # vim-cheatsheet
 
-A Vim plugin that toggles a popup window with custom content that you set for the buffer.
-
-Support is planned for Neovim but it is currently missing because Neovim implements a different API for popups/floating windows.
+A Vim/Neovim plugin that toggles a popup window with custom content that you set for the buffer.
 
 Motivating use case: forgetting whether `$<` or `$^` is the variable that contains all prerequisites of a recipe in a [Makefile](https://www.gnu.org/software/make/manual/html_node/Introduction.html).
 With vim-cheatsheet, I can toggle a reminder when I am editing a Makefile:
