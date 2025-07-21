@@ -43,7 +43,7 @@ Or in Neovim:
 $ mkdir -p ~/.config/nvim/pack/gn0/start
 $ cd ~/.config/nvim/pack/gn0/start
 $ git clone https://github.com/gn0/vim-cheatsheet.git
-$ vim -u NONE -c "helptags vim-cheatsheet/doc" -c q
+$ nvim -u NONE -c "helptags vim-cheatsheet/doc" -c q
 ```
 
 ## License
